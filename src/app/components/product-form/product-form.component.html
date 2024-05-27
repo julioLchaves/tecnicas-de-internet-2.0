@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>{{ product.id ? 'Edit' : 'Add' }} Product</h2>
+    <form (ngSubmit)="saveProduct()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="barcode" class="form-label">Barcode</label>
+        <input type="text" class="form-control" id="barcode" [(ngModel)]="product.barcode" name="barcode" required>
+      </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" [(ngModel)]="product.quantity" name="quantity" required>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <input type="text" class="form-control" id="category" [(ngModel)]="product.category" name="category" required>
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-control" id="status" [(ngModel)]="product.status" name="status" required>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="imageUrl" [(ngModel)]="product.imageUrl" name="imageUrl">
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+    </form>
+  </div>
+  
